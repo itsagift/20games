@@ -1,4 +1,4 @@
-local class = require 'utils/middleclass'
+local class = require 'middleclass'
 local Brick = class('Brick')
 
 function Brick:initialize(x, y, width, height, color)

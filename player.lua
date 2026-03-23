@@ -1,4 +1,4 @@
-local class = require 'utils/middleclass'
+local class = require 'middleclass'
 local Player = class('Player')
 
 function Player:initialize(x, y, width, height)

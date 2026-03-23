@@ -1,4 +1,4 @@
-local class = require 'utils/middleclass'
+local class = require 'middleclass'
 local Menu = class('Menu')
 
 function Menu:initialize()
@@ -24,12 +24,22 @@ function Menu:draw()
         love.graphics.setFont(capFont)
         love.graphics.print("Press <<A>> to start", 240, 350)
     end
-    if GameState.ended then
+    if GameState.paused then
         love.graphics.rectangle("fill", 250, 250, self.width / 2, self.height / 2)
         local scoreFont = love.graphics.newFont("PressStart2P.ttf", 32)
         love.graphics.setFont(scoreFont)
         love.graphics.setColor(1, 1, 1)
+        love.graphics.print("PAUSED ||", 275, 260)
+    end
+    if GameState.ended then
+        love.graphics.rectangle("fill", self.x, self.y, self.width, self.height)
+        local scoreFont = love.graphics.newFont("PressStart2P.ttf", 32)
+        love.graphics.setFont(scoreFont)
+        love.graphics.setColor(1, 1, 1)
         love.graphics.print("Game Over", 275, 275)
+        local capFont = love.graphics.newFont("PressStart2P.ttf", 16)
+        love.graphics.setFont(capFont)
+        love.graphics.print("Press <<A>> to restart", 275, 350)
     end
 
 end
